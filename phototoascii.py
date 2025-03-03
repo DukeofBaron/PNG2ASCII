@@ -11,13 +11,13 @@ new_height = int(new_width*aspect_ratio*0.58)
 image_gray = image_gray.resize((new_width,new_height))
 
 
-sayac = 0
+counter = 0
 pixels = list(image_gray.getdata())
 for pixel in pixels:
     against = int(pixel//28.33)
-    karakter = ASCII_CHARS[against]
-    path.write(karakter)
-    sayac+=1
-    if sayac==new_width:
-        sayac = 0
+    char = ASCII_CHARS[against]
+    path.write(char)
+    counter+=1
+    if counter==new_width:
+        counter = 0
         path.write("\n")
